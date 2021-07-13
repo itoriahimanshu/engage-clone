@@ -1,0 +1,106 @@
+
+</html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>its2Chat</title>
+    <link rel="icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div class="chat">
+        <div id="sidebar" class="chat__sidebar" style="background-color:black;">
+
+        </div>
+        <div class="chat__main">
+            <div id="messages" class="chat__messages" ></div>
+
+            <div class="compose">
+                
+                <form id="message-form">
+                    <input name="message" placeholder="Message" required autocomplete="off">
+                    <button style="background-color:black; color:silver; font-family:verdana;">
+                    <i class="material-icons">send</i>
+                  <span>Send</span>
+                  </button>
+                  
+                 
+                
+ 
+                </form>
+                <button id="send-location"  style="background-color:black; color:silver ; font-family:verdana;"><i class="material-icons">location_on</i></br>
+                  <span>Location</span></button>
+                 <button id="videocall"  style="background-color:darkgray; color:black ; font-family:verdana;"><i class="material-icons">video_call</i></br>
+                  <span>VideoCall</span></button>
+                 <button id="breakoutcall"  style="background-color:black; color:silver ; font-family:verdana;"><i class="material-icons">video_label</i></br>
+                  <span>Breakout Rooms</span></button>
+                &nbsp;&nbsp;&nbsp;
+               
+                 
+                
+            </div>
+        </div>
+    </div>
+
+    <script id="message-template" type="text/html">
+            <div class="message">
+                <p>
+                    <span class="message__name" style="color:black; font-weight: bold; " >{{username}}</span>
+                    <span class="message__meta">{{createdAt}}</span>
+                </p>
+                <p style="font-family:verdana;">{{message}}</p>
+            </div>
+        </script>
+
+    <script id="location-message-template" type="text/html">
+            <div class="message">
+                <p>
+                    <span class="message__name" style="color:black; font-weight: bold; ">{{username}}</span>
+                    <span class="message__meta">{{createdAt}}</span>
+                </p>
+                <p><a href="{{url}}" target="_blank">My current location</a></p>
+            </div>
+        </script>
+    <script id="videocall-template" type="text/html">
+            <div class="message">
+                <p>
+                    <span class="message__name" style="color:black; font-weight: bold; ">{{username}}</span>
+                    <span class="message__meta">{{createdAt}}</span>
+                </p>
+                <p><a href="{{url}}" target="_blank">Videocall</a></p>
+            </div>
+        </script>
+    <script id="breakout-template" type="text/html">
+            <div class="message">
+                <p>
+                    <span class="message__name" style="color:black; font-weight: bold; ">{{username}}</span>
+                    <span class="message__meta">{{createdAt}}</span>
+                </p>
+                <p><a href="{{url}}" target="_blank">Breakout call</a></p>
+            </div>
+        </script>
+
+    <script id="sidebar-template" type="text/html" >
+        <div class="room-title"><h2>{{room}}</h2></div>
+        <div class="list-title" style="color:silver; font-weight: bold; font-style: italic;"><h2>Users</h2></div>
+        <ul class="users" >
+            {{#users}}
+                <li  style="font-family:verdana;">{{username}}</li>
+                <br/>
+            {{/users}}
+        </ul>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+</body>
+
+</html>
