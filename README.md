@@ -1,3 +1,6 @@
+it2Chat Application URL:
+https://its2chat.herokuapp.com/
+
 1)Authentication:
 
 Register – > Login -> Join Room Request -> Enter room
