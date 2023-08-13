@@ -1,5 +1,5 @@
 it2Chat Application URL:
-https://its2chat.herokuapp.com/
+
 
 1)Authentication:
 
